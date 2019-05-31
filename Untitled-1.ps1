@@ -42,12 +42,12 @@ $Document = $Word.Document.Open($File)
 $i=0
 $n=10
 $s=0
-Do {$i++;$s=$i*3;Write-host 'step'$i;Write-host 'sum='$s}
+Do {$i++;$s=$s+$i*3;Write-host 'step'$i;Write-host 'sum='$s}
 While ($i -lt $n)
 #20
 function Sum-vi ([int]$n)
 {
 $i=0
 $s=0
-Do {$i++;$s=$i*3;Write-host 'step'$i;Write-host 'sum='$s}
+Do {$i++;$s=$s+$i*3;Write-host 'step'$i;Write-host 'sum='$s}
 While ($i -lt $n)}
