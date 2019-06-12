@@ -16,3 +16,22 @@ get-content -Path "Serv:\AllServices.txt"
 Get-Process | Get-Item | Sort  CPU -desc |
 Select Directory, Name, CreationTime, LastWriteTime ,CPU(s) -last 6
 #7
+Get-Process | foreach-object{
+
+    if ($_.CPU -gt "100") {
+    
+    write-host -f red $.Name "-" $.VM}`
+    
+    else{ write-host -f green $.Name "-" $.VM}}
+#8
+(Get-ChildItem C:\windows -recurse -Force -exclude *.tmp | Measure-Object -Property Length -Sum).Sum / 1Mb
+#9
+Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft | Out-File d:\M2T9.csv
+#10
+Get-History | Out-File d:\M2T10.xml
+#11
+Add-History -InputObject (Import-Clixml -Path d:\M2T10.xml)
+Get-History
+#12
+Remove-Item C:\M2T2_Markov
+Remove-PSDrive -name M2T2_Markov
