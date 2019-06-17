@@ -5,7 +5,7 @@
     Invoke-Command -Credential administrator -VMName MARKOV_VM1, MARKOV_VM2, MARKOV_VM3 {
         (gwmi win32_operatingsystem -EnableAllPrivileges).Reboot()
     }
-#2.	При помощи WMI просмотреть список запущенных служб на удаленном компьютере. 
+#2
     Invoke-Command -Credential administrator  -VMName MARKOV_VM2 {Get-WmiObject -Class Win32_Process | Select-Object ProcessName -Unique}
 #3
     #enable PowerShellRemoting
